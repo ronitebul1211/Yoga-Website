@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -16,8 +18,7 @@
   --content-primary-color: white;
 }
 
-
-body{
+html {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden; /* no scroll */
@@ -27,14 +28,20 @@ body{
 .section {
   width: 100%;
   height: 100vh;
+  margin: auto;
 }
 
-/*Use for h1*/
+.container-main-content{
+  max-width: 900px;
+  padding: 2rem;
+  margin: auto;
+}
+
+/* Heading */
 .heading {
-  font-size: 2.5rem;
+  font-size: 5rem;
   letter-spacing: 0.4rem;
   text-transform: uppercase;
-  padding: 1rem 0;
 }
 
 .heading--light {
@@ -45,11 +52,12 @@ body{
   color: black;
 }
 
-/* Use for h3*/
+
+/* Main Content */
 .main-content {
-  font-size: 1.2rem;
+  font-size: 2rem;
   letter-spacing: 0.1rem;
-  line-height: 2rem;
+  line-height: 2.5rem;
   font-weight: 600;
 }
 
@@ -87,8 +95,7 @@ body{
 
 /*Sub Content */ 
 .sub-content {
-  font-size: 0.9rem;
-  line-height: 1.1rem;
+  font-size:1.5rem;
   font-weight: 500;
   padding: 0.2rem 0;
 }
@@ -96,6 +103,8 @@ body{
 .sub-content--dark {
   color: black;
 }
+
+
 
 
 /* Header ***********************************************************************************************************/
@@ -144,7 +153,7 @@ nav .sub-menu {
   top: 150%;
   left: 0;
   z-index: 1000;
-  min-width: 10rem;
+  min-width: 14rem;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   background: var(--nav-bg-color); 
@@ -169,7 +178,7 @@ nav .sub-menu::before {
   position: relative; /* for sub-menu to be absolute */
   font-weight: 600;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: inherit;
 }
 
@@ -201,7 +210,7 @@ nav .sub-menu::before {
 .header-content {
   z-index: 10;
   height: 100%;
-  width: 100%;
+  max-width: 900px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -210,40 +219,35 @@ nav .sub-menu::before {
   text-align: center;
 }
 
+
 /* Planes ***********************************************************************************************************/
+
 .plans-content {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  align-items: center;
-  justify-content: center;
 }
 
-.plans-list {
-  width: 100%;
-  height: 70%;
+ .plans-list {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  gap: 2rem;
+  margin: auto;
 }
 
-.plan{
-  display: flex;
-  flex-direction: column;
-  max-width:250px;
-  height: 350px;
+img {
+  width:100%;
 }
 
- .plan-img {
-  width: 100%;
-  height: 250px;
+@media(max-width:768px){
+  html {
+    font-size: 60%;
+  }
+  .plans-list {
+    flex-direction: column;
+  }
+  .plan {
+    width: 350px;
+    margin: auto;
+  }
 }
-
-
- 
 
 
 
