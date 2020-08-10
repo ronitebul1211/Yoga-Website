@@ -1,0 +1,259 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+
+:root {
+  --nav-primary-color: black;
+  --nav-secondary-color: #fd7e14;
+  --nav-bg-color: white;
+  --content-primary-color: white;
+}
+
+
+body{
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* no scroll */
+}
+
+/* Section */
+.section {
+  width: 100%;
+  height: 100vh;
+}
+
+/*Use for h1*/
+.heading {
+  font-size: 2.5rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.heading--light {
+  color: white;
+}
+
+.heading--dark {
+  color: black;
+}
+
+/* Use for h3*/
+.main-content {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.main-content--light {
+  color: white;
+}
+
+.main-content--dark {
+  color: black;
+}
+
+.main-content--btn {
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.main-content--btn::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 2px solid var(--nav-secondary-color);
+  transition: all 1s;
+}
+
+.main-content--btn:hover::before {
+  right: 0;
+}
+
+.main-content--btn:hover {
+  color: var(--nav-secondary-color);
+}
+
+/*Sub Content */ 
+.sub-content {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  font-weight: 500;
+  padding: 0.2rem 0;
+}
+
+.sub-content--dark {
+  color: black;
+}
+
+
+/* Header ***********************************************************************************************************/
+.header--bg-img {
+  position: relative;
+  background:  url('img/header1.jpg') no-repeat center center/cover; 
+  background-position: 50% 25%; 
+}
+.header--bg-img::before{
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 70%;
+  height: 100%;
+  background: black none repeat scroll 0 0;
+  opacity: 0.25;
+  -webkit-clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+  clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+}
+
+/* Navigation Bar*/
+nav {
+  position: fixed;
+  z-index: 20;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--nav-bg-color);
+  color: var(--nav-primary-color);
+}
+
+nav .menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  color: inherit;
+}
+
+nav .sub-menu {  
+  list-style: none;
+  position: absolute;
+  padding: 1rem;
+  top: 150%;
+  left: 0;
+  z-index: 1000;
+  min-width: 10rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background: var(--nav-bg-color); 
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity, visibility 1s ease;
+}
+nav .sub-menu::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 45px;
+  border: 7px solid #495057;
+  border-color: transparent transparent var(--nav-bg-color) var(--nav-bg-color);
+  transform-origin: 0 0;
+  transform: rotate(135deg);
+  box-shadow: -2px 2px 2px -1px rgba(0, 0, 0, 0.15);
+}
+
+.nav-item {
+  display: block;
+  position: relative; /* for sub-menu to be absolute */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  color: inherit;
+}
+
+.nav-item--main{
+  text-transform: uppercase;
+  padding: 0 1rem;
+}
+
+.nav-item--sub{
+  padding: 0.3rem;
+}
+
+.nav-item:hover{
+  cursor: pointer;
+  color: var(--nav-secondary-color);
+}
+
+.nav-item--main--logo:hover{
+  color: var(--nav-primary-color);
+}
+
+.nav-item--main--has-sub:hover .sub-menu{
+  visibility: visible;
+  opacity: 1;
+  color: var(--nav-primary-color);  
+}
+
+/*Content*/
+.header-content {
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Planes ***********************************************************************************************************/
+.plans-content {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.plans-list {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.plan{
+  display: flex;
+  flex-direction: column;
+  max-width:250px;
+  height: 350px;
+}
+
+ .plan-img {
+  width: 100%;
+  height: 250px;
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
